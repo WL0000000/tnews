@@ -1,0 +1,27 @@
+# Copy this file to config.toml and fill in what you use. Never share config.toml (it holds your keys).
+
+[alerts]
+telegram_token = ""        # from @BotFather on Telegram
+telegram_chat_id = ""      # your chat id (see README step 3)
+discord_webhook = ""       # optional: a Discord channel webhook URL
+speak = false              # true = read alerts aloud on this computer (needs: pip install pyttsx3)
+
+[ai]
+anthropic_api_key = ""     # optional: adds a 2-line AI summary to Fed/CPI alerts (costs a fraction of a cent each)
+anthropic_model = "claude-haiku-4-5-20251001"
+
+[data]
+bls_api_key = ""           # free, needed for CPI/PPI/jobs: https://data.bls.gov/registrationEngine/
+contact_email = ""         # sent to BLS/Fed servers so they know who is polling
+regime = "inflation"       # "inflation" while the Fed is hiking; "growth" if it is cutting because the economy is weak
+
+[schedule]
+timezone = "America/Vancouver"
+headline_start = "05:00"
+headline_end = "13:30"
+
+[headlines]
+headline_poll_seconds = 30
+min_headline_score = 4     # raise to 6 if you get too many alerts, lower to 3 for more
+extra_feeds = []           # more RSS/Atom feed URLs
+[headlines.extra_keywords] # word = weight, e.g. "palantir" = 2

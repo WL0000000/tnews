@@ -1,0 +1,1 @@
+"""NQ news alert bot."""
